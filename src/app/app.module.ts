@@ -8,6 +8,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {AngMusicPlayerModule} from "ang-music-player";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {InputTextModule} from "primeng/inputtext";
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     AngMusicPlayerModule,
     ReactiveFormsModule,
+    InputTextModule,
+    ButtonModule,
     FormsModule,
     CommonModule,
     AppRoutingModule

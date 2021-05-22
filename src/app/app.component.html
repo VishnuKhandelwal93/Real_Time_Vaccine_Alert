@@ -367,9 +367,12 @@
 
 
   <!-- Terminal -->
-  <div>
-    <input placeholder="Search by pincode">
-    <button (click)="getDetails()"> Run Script</button>
+  <div style="display: flex; margin-top: 20px" [formGroup]="form">
+    <span class="p-float-label" style="margin-right: 10px">
+      <input id="float-input" type="text" pInputText formControlName="pincode">
+      <label for="float-input">Enter your pincode here</label>
+    </span>
+    <button pButton type="button" label="Run Script" class="p-button-info" (click)="getDetails()"></button>
   </div>
 
   <!-- Links -->
