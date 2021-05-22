@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   @ViewChild(AngMusicPlayerComponent) audioPlayerComponent!: AngMusicPlayerComponent;
 
   title = 'vaccine-web';
-  public data: any;
+  public data: any[] = [];
   public form: FormGroup;
   public date: Date = new Date();
   sampleData: any = {
@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    // this.data.push(this.sampleData);
   }
 
   submit() {

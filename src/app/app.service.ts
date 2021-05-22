@@ -13,7 +13,7 @@ export class AppService {
     const today = new Date()
     const tomorrow = new Date(today)
     tomorrow.setDate(tomorrow.getDate() + 1);
-    let date = tomorrow.toLocaleDateString();
+    let date = today.toLocaleDateString();
     date.replace("/", "-");
     return this.http.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=" + pincode + "&date=" + date);
   }
