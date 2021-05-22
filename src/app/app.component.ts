@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // this.data.push(this.sampleData);
-    localStorage.setItem("delay", "3000");
+    localStorage.setItem("delay", "10000");
   }
 
   submit() {
