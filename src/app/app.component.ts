@@ -62,6 +62,7 @@ export class AppComponent implements OnInit {
     }
   ];
   logs: any[] = [];
+  timeDuration: number = 10000;
   private timeOutVariable: any;
 
   constructor(private appService: AppService, private fb: FormBuilder) {
@@ -72,6 +73,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // this.data.push(this.sampleData);
+    localStorage.setItem("delay", "3000");
   }
 
   submit() {
@@ -81,6 +83,12 @@ export class AppComponent implements OnInit {
   }
 
   getDetails() {
+    let value = localStorage.getItem("delay");
+    if (value) {
+      this.timeDuration = parseInt(value);
+    } else {
+      this.timeDuration = 10000;
+    }
     setTimeout(() => {
       this.appService.getDetails(this.form.get("pincode")?.value).subscribe((data: any) => {
         console.log(data);
@@ -104,6 +112,6 @@ export class AppComponent implements OnInit {
         this.logs.push({time: new Date().toLocaleTimeString(), status: "error", result: ""});
         this.getDetails();
       });
-    }, 3100);
+    }, this.timeDuration);
   }
 }
