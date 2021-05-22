@@ -61,6 +61,7 @@ export class AppComponent implements OnInit {
       cover: "https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg"
     }
   ];
+  logs: any[] = [];
   private timeOutVariable: any;
 
   constructor(private appService: AppService, private fb: FormBuilder) {
@@ -97,10 +98,12 @@ export class AppComponent implements OnInit {
         if (!vaccineAvailable) {
           this.getDetails();
         }
+        this.logs.push({time: new Date().toLocaleTimeString(), status: "success", result: ""});
       }, (err) => {
         console.log(err);
+        this.logs.push({time: new Date().toLocaleTimeString(), status: "error", result: ""});
         this.getDetails();
       });
-    }, 5100);
+    }, 3100);
   }
 }
