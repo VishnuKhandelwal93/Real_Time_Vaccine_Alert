@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
 
   constructor(private appService: AppService, private fb: FormBuilder) {
     this.form = this.fb.group({
-      "pincode": ["", Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(6)])]
+      "pincode": [""]
     });
   }
 

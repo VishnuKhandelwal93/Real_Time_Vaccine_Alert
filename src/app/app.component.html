@@ -188,6 +188,11 @@
     overflow: scroll;
   }
 
+  .greenCard {
+    background-color: darkseagreen;
+    color: white;
+  }
+
   .terminal::before {
     content: "console";
     position: absolute;
@@ -369,7 +374,9 @@
       <button pButton type="button" label="Run Script" class="p-button-info" (click)="getDetails()"></button>
     </div>
     <div class="card-container">
-      <a class="card" style="display: grid" *ngFor="let dataVal of data">
+      <a style="display: grid" *ngFor="let dataVal of data"
+         class="card {{dataVal?.available_capacity ? 'greenCard':''}}">
+        <span>{{dataVal?.pincode}}</span>
         <span>{{dataVal?.name}}</span>
         <span>{{dataVal?.address}}</span>
         <span>Dose 1 - {{dataVal?.available_capacity_dose1}}</span>
